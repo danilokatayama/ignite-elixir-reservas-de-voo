@@ -7,10 +7,10 @@ defmodule Flightex.Bookings.Report do
     File.write(filename, booking_list)
   end
 
-  def generate_report(from_date, to_date) do
+  def generate_report(from_date, to_date, filename \\ "report.csv") do
     booking_list = build_booking_list(from_date, to_date)
 
-    File.write("report.csv", booking_list)
+    File.write(filename, booking_list)
   end
 
   defp build_booking_list() do
